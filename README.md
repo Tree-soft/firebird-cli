@@ -35,13 +35,13 @@ __Changelog for version v0.2.x__
 ## Installation
 
 ```bash
-npm install node-firebird
+npm install firebird-cli
 ```
 
 ## Usage
 
 ```js
-var Firebird = require('node-firebird');
+var Firebird = require('firebird-cli');
 ```
 
 ### Methods
@@ -461,17 +461,8 @@ fb.attach(_connection, function(err, svc) {
 
 ```
 
-### Charset for database connection is always UTF-8
+### Charset for database connection is always WIN1251
 
-node-firebird doesn't let you chose the charset connection, it will always use UTF8.
-Node is unicode, no matter if your database is using another charset to store string or blob, Firebird will transliterate automatically.
-
-This is why you should use **Firebird 2.5** server at least.
-
-### Firebird 3.0 Support
-
-Firebird new wire protocol is not supported yet so
-for Firebird 3.0 you need to add the following in firebird.conf
 ```
 AuthServer = Legacy_Auth
 WireCrypt = Disabled
